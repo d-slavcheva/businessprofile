@@ -1,0 +1,42 @@
+@mixin my-form {
+  @include flexbox(column, space-between, flex-start, 1.5rem);
+  input,
+  select,
+  textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px $primary solid;
+    font-family: $font-fam;
+    color: $primary;
+
+    &[type="submit"] {
+      @include button($primary);
+      font-size: 1rem;
+    }
+    ::-webkit-input-placeholder {
+      font-family: $font-fam;
+      font-size: 1.2rem;
+    }
+    ::-moz-placeholder {
+      font-family: $font-fam;
+      font-size: 1.2rem;
+    }
+    :-ms-input-placeholder {
+      font-family: $font-fam;
+      font-size: 1.2rem;
+    }
+    ::-ms-input-placeholder {
+      font-family: $font-fam;
+      font-size: 1.2rem;
+    }
+    ::placeholder {
+      font-family: $font-fam;
+      font-size: 1.2rem;
+    }
+  }
+  label{
+    font-weight: 900;
+  }
+}

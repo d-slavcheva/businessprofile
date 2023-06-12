@@ -1,0 +1,15 @@
+$primary: #324F79;
+$light:lighten($primary,80%);
+$font-fam-h:'oswaldregular', Arial, Helvetica, sans-serif;
+$font-fam:'robotoregular', Arial, Helvetica, sans-serif;
+$font-color:#262626;
+
+
+$transition: all .5s ease;
+
+
+$break-xsmall: 500px;
+$break-small: 650px;
+$break-medium: 850px;
+$break-large: 1167px;
+$break-xlarge: 1250px;

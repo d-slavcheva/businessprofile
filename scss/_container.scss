@@ -1,0 +1,211 @@
+nav {
+  @include flexbox(row, space-between, center, 0rem);
+  min-height: 2.5rem;
+ @include spacing(1rem, 15%);
+}
+
+header {
+  height: 80vh;
+  @include spacing(10rem, 15%);
+
+  position: relative;
+  color: white;
+  @include flexbox(column, flex-end, flex-start, 2rem);
+  flex-wrap: nowrap;
+
+  background-image: url(../img/header1.jpg), url(../img/header2.jpg);
+  background-position: bottom right, center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  background-blend-mode: screen;
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    background-size: 100%;
+    background-image: linear-gradient(
+      50deg,
+      transparentize($primary, 0) 30%,
+      transparentize($primary, 1)
+    );
+  }
+  h2 {
+    color: $light;
+  }
+
+  > * {
+    z-index: 1;
+    position: relative;
+    width: 50%;
+  }
+
+  a {
+    @include button($primary);
+  }
+}
+
+section {
+   @include spacing(7.5%, 15%);
+   
+
+  &:first-of-type {
+    h1 {
+      text-transform: capitalize;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      text-align: center;
+      & + p {
+        text-align: center;
+        width: 60%;
+        margin: 1rem auto;
+      }
+    }
+
+    > div {
+      @include flexbox(row, center, center, 1rem);
+
+      > div {
+      
+
+        figure {
+          border-radius: 50%;
+          background-color: $light;
+
+          width: 6rem;
+          height: 6rem;
+
+          position: relative;
+          i {
+            color: $primary;
+            font-size: 2rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        h3 {
+          margin: 1rem auto;
+          text-align: center;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  &:nth-of-type(2) {
+    padding-top: 0;
+    height: 80vh;
+    background-color: lighten($primary, 60%);
+    background-image: url(../img/section-3_1.png), url(../img/section-3_1.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom right, center;
+    background-size: contain, cover;
+
+    div {
+      padding: 2rem;
+      height: 80vh;
+      width: 60%;
+
+      background-color: transparentize($light, 0.1);
+      -webkit-backdrop-filter: 5px;
+      backdrop-filter: 5px;
+      @include flexbox(column, center, flex-start, 1rem);
+    }
+
+    a {
+      @include button($light);
+    }
+  }
+
+  &:nth-of-type(3) {
+    display: grid;
+    grid-template-columns: repeat(25, calc((100%) / 25));
+    grid-template-rows: repeat(25, 3rem);
+
+    :first-child {
+      grid-column: 5/21;
+      grid-row: 1/10;
+    }
+
+    :nth-child(2) {
+      grid-column: 3/13;
+      grid-row: 9/18;
+    }
+    :nth-child(3) {
+      grid-column: 14/25;
+      grid-row: 7/15;
+    }
+
+    :nth-child(4) {
+      grid-column: 3/12;
+      grid-row: 18/27;
+
+      @include flexbox(column, flex-start, flex-start, 1rem);
+
+      a {
+        @include button($light);
+      }
+    }
+
+    :nth-child(5) {
+      grid-column:  14/21;
+      grid-row: 15/21;
+    }
+
+    :nth-child(6) {
+      display: block;
+      background-color: $primary;
+      grid-column: 1/26;
+      grid-row: 4/11;
+      order: -1;
+    }
+  }
+
+  &:last-of-type {
+    background-color: $primary;
+
+    h2 {
+      text-transform: uppercase;
+    }
+
+    a {
+      display: block;
+    }
+
+    > div {
+      background-color: $light;
+      padding: 2rem;
+
+      @include flexbox(row, space-between, flex-start, 3rem);
+
+      > div {
+        flex-basis: 40%;
+        @include flexbox(column,space-between, flex-start, 3rem);
+      }
+      > form{
+        flex-basis: 50%;
+        flex-grow: 1;
+        @include my-form;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $font-color;
+  color: $light;
+  min-height: 10rem;
+ @include spacing(2rem,15%);
+ @include flexbox(column,space-between);
+
+  
+}
